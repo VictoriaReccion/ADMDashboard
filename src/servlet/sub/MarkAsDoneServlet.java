@@ -27,7 +27,7 @@ public class MarkAsDoneServlet {
 		
 		String eventId = request.getParameter(Event.COL_EVENTID);
 		System.out.println("eventID: " + eventId);
-		//EventService.markAsDone(Integer.parseInt(eventId));
+		EventService.markAsDone(Integer.parseInt(eventId));
 		PrintWriter pw = response.getWriter();
 		pw.write(1);
 		

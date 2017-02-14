@@ -32,17 +32,17 @@ public class LoginServlet {
 		System.out.println("LOGINSERVLET POST");
 		
 		// retrieve attributes from index.jsp
-		String email = request.getParameter(User.COL_EMAIL);
+		String email = request.getParameter("email");
 		String logoURL = request.getParameter("logoURL");
 		
 		// match attributes to the db
-		System.out.println(email);
 		User user = UserService.searchUser(email);
+		System.out.println(email);
+		System.out.println(user);
 		
 		// if user exists, go to admin/orgrep servlet
 		if(user != null) {
-			request.getSession().setAttribute(user.getOrgcode(), User.COL_ORGCODE);
-			request.getSession().setAttribute(user.getUserType().toString(), "ADMIN");
+			
 			// CREATE COOKIE
 			Cookie userIDcookie = new Cookie(User.COL_IDNUMBER, user.getUserID() + "");
 			Cookie logoURLcookie = new Cookie("logoURL", logoURL);

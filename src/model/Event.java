@@ -3,8 +3,6 @@ package model;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import model.datetime.SimpleDate;
-
 public class Event implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -24,12 +22,12 @@ public class Event implements Serializable{
 	private String eventtype;
 	private String eventdesc;
 	private Status postact_status;
-	private SimpleDate postact_deadline;
+	private Calendar postact_deadline;
 	
 	public Event() {}
 
 	public Event(int eventID, String orgcode, String eventname, String eventtype, String eventdesc,
-			Status postact_status, SimpleDate postact_deadline) {
+			Status postact_status, Calendar postact_deadline) {
 		super();
 		this.eventID = eventID;
 		this.orgcode = orgcode;
@@ -49,7 +47,7 @@ public class Event implements Serializable{
 	}
 
 	public String getOrgcode() {
-		return orgcode.toUpperCase();
+		return orgcode;
 	}
 
 	public void setOrgcode(String orgcode) {
@@ -88,11 +86,11 @@ public class Event implements Serializable{
 		this.postact_status = postact_status;
 	}
 
-	public SimpleDate getPostact_deadline() {
+	public Calendar getPostact_deadline() {
 		return postact_deadline;
 	}
 
-	public void setPostact_deadline(SimpleDate postact_deadline) {
+	public void setPostact_deadline(Calendar postact_deadline) {
 		this.postact_deadline = postact_deadline;
 	}
 }

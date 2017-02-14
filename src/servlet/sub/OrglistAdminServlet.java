@@ -38,7 +38,6 @@ public class OrglistAdminServlet {
 		
 		for(int i = 0; i < cookies.length; i ++) {
 			if(cookies[i].getName().equals(User.COL_IDNUMBER)) {
-				System.out.println(cookies[i].getValue());
 				user = UserService.searchUser(Integer.parseInt(cookies[i].getValue()));
 			}
 			else if(cookies[i].getName().equals("logoURL")) {

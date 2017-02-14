@@ -47,19 +47,19 @@ public class AjaxUserCalendarServlet{
 		
 		// needs orgcode of logged in user to be stored at log in
 		
-		/*if(org != null)
+		if(org != null)
 			events = CalendarEventService.getEventsByOrg(org.getOrgcode(), Status.DONE);
 		else
-			events = CalendarEventService.getAllEvents(Status.DONE);*/
+			events = CalendarEventService.getAllEvents(Status.DONE);
 		
 
 		//events = CalendarEventService.getEventsByOrg("imes", Status.DONE);
 		//events.add(new CalendarEvent(1, "TEST", "2016-11-15", "2016-11-16", "#333"));
-		/*String json = new Gson().toJson(events);
+		String json = new Gson().toJson(events);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		System.out.println(json);
-		response.getWriter().write(json);*/
+		response.getWriter().write(json);
 	}
 	
 	public static void process(HttpServletRequest request, HttpServletResponse response, int type) throws ServletException, IOException{

@@ -119,6 +119,8 @@ public class OrgService {
 				+ " WHERE LOWER(" + Org.COL_ORGCODE + ") LIKE LOWER(?) OR "
 				+ " LOWER(" + Org.COL_ORGNAME + ") LIKE LOWER(?)";
 		
+		System.out.println(query);
+		
 		input.add("%" + searchString + "%");
 		input.add("%" + searchString + "%");
 		
